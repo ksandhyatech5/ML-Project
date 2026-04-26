@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-900 text-white min-h-screen font-sans;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+}

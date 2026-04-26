@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Frontend",
+            "type": "shell",
+            "command": "npm run dev",
+            "options": {
+                "cwd": "${workspaceFolder}/frontend"
+            },
+            "isBackground": true,
+            "presentation": {
+                "group": "start-all"
+            }
+        },
+        {
+            "label": "Run Backend",
+            "type": "shell",
+            "command": ".\\venv\\Scripts\\python main.py",
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "isBackground": true,
+            "presentation": {
+                "group": "start-all"
+            }
+        },
+        {
+            "label": "Run Fullstack",
+            "dependsOn": [
+                "Run Frontend",
+                "Run Backend"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
